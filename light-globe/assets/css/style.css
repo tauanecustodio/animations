@@ -1,0 +1,125 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --global-color: white;
+}
+
+body {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+}
+
+.globe-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 1em;
+}
+
+.globe-container.active .globe {
+    background-color: var(--global-color);
+    animation: pulse 3s infinite linear alternate;
+}
+
+.globe {
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background-image: url('../images/globe-earth-vector-illustration.png');
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 15em 1em var(--global-color);
+    }
+    100% {
+        box-shadow: 0 0 7em 1em var(--global-color);
+    }
+}
+
+.aste {
+    width: 30px;
+    height: 60px;
+    background: black;
+}
+
+.base {
+    width: 200px;
+    height: 50px;
+    border-radius: 20px 20px 0 0;
+    background: black;
+}
+
+.globe-container.active .aste, .globe-container.active .base {
+    background: rgb(22, 22, 22);
+}
+
+.buttons-container {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    margin: 5em 3em;
+    display: flex;
+    flex-direction: column;
+    background: black;
+}
+
+.button {
+    width: 100px;
+    height: 100px;
+    color: white;
+    font-size: 2em;
+    background: transparent;
+    border: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.button:hover {
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.button:active {
+    transform: scale(0.9);
+}
+
+#color-selector {
+    background: none;
+    width: 70px;
+    height: 70px;
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    right: 50%;
+    transform: translate(50%, -50%);
+    z-index: -1;
+}
+
+#color-selector::-webkit-color-swatch {
+    border-radius: 50%;
+}
+
+#color-selector::-moz-color-swatch {
+    border-radius: 50%;
+}
+
+@media (max-width: 700px) {
+    .buttons-container {
+        flex-direction: row;
+        left: 0;
+        margin: 1em 2em;
+    }
+}
