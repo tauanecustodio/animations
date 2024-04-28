@@ -81,6 +81,7 @@ body {
     font-size: 2em;
     background: transparent;
     border: none;
+    outline: none;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -88,6 +89,8 @@ body {
 }
 
 .button:hover {
+    border: none;
+    outline: none;
     cursor: pointer;
     transform: scale(1.1);
 }
@@ -106,6 +109,11 @@ body {
     right: 50%;
     transform: translate(50%, -50%);
     z-index: -1;
+}
+
+#color-selector:hover {
+    outline: 0 none;
+    border: 0 none;
 }
 
 #color-selector::-webkit-color-swatch {
